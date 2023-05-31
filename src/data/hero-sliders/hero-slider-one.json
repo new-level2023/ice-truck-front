@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "backgroundImage": "/assets/images/main-banner.jpeg",
+    "subtitle": "Get all you need in Ice Truck",
+    "title": "All your truck parts, in one place.",
+    "url": "/shop/grid-left-sidebar"
+  },
+  {
+    "id": "2",
+    "backgroundImage": "/assets/images/hero-slider/one/3.jpg",
+    "subtitle": "Great Prices and Great Service. All fleets, mechanics, shops, and owner operators welcome",
+    "title": "Access to our catalog!",
+    "url": "/other/register"
+  }
+]
