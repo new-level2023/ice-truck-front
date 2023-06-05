@@ -1,5 +1,6 @@
 import Link from "next/link";
 import BreadcrumbOne from "./BreadcrumbOne";
+import cx from "classnames";
 
 /**
  * 
@@ -10,7 +11,7 @@ import BreadcrumbOne from "./BreadcrumbOne";
 function Breadcrumb({ pageTitle, crumbs = [] }) {
     return (
         <BreadcrumbOne pageTitle={pageTitle}>
-            <ol className="breadcrumb justify-content-md-end">
+            <ol className={cx("breadcrumb", { "justify-content-md-end": !!pageTitle })}>
                 {crumbs.length ?
                     crumbs.map((crumb, index) => {
                         if (crumbs.length - 1 !== index) {

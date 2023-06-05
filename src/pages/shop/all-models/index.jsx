@@ -7,6 +7,7 @@ import { LayoutOne } from "layouts";
 import { Breadcrumb } from "components/Breadcrumb";
 import { Sidebar, ShopHeader, ShopProducts } from "components/Shop";
 import { getSortedProducts } from "lib/product";
+import { Disclaimer } from 'components/Disclaimer';
 
 const AllBrands = () => {
     const { products } = useSelector((state) => state.product);
@@ -52,15 +53,21 @@ const AllBrands = () => {
     return (
         <LayoutOne>
             {/* breadcrumb */}
-            <Breadcrumb pageTitle="Shop" crumbs={[
-                { href: "/", text: "Home" },
-                { text: "Browse by Make/Model" },
-            ]} />
             <div className="shop-content space-pt--r100 space-pb--r100">
                 <Container>
                     <Row>
                         <Col lg={9}>
                             {/* shop page header */}
+
+                            <Breadcrumb crumbs={[
+                                { href: "/", text: "Home" },
+                                { text: "Browse by Make/Model" },
+                            ]} />
+                            <Disclaimer>
+                                Browse by Make/Model is designed to be used as a guide and there could be multiple options used across different applications/years.
+                                Please verify OEM reference numbers or fit before ordering. IceTruck is not responsible for incorrect identification.
+                            </Disclaimer>
+
                             <ShopHeader
                                 getLayout={getLayout}
                                 getFilterSortParams={getFilterSortParams}
@@ -88,7 +95,7 @@ const AllBrands = () => {
                         </Col>
                         <Col lg={3} className="order-lg-first mt-4 pt-2 mt-lg-0 pt-lg-0">
                             {/* sidebar */}
-                            <Sidebar products={products} getSortParams={getSortParams} />
+                            {/* <Sidebar products={products} getSortParams={getSortParams} /> */}
                         </Col>
                     </Row>
                 </Container>

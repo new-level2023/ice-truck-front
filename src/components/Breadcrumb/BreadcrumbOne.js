@@ -5,11 +5,11 @@ const BreadcrumbOne = ({ pageTitle, children }) => {
     <div className="breadcrumb-section bg--grey space-pt--r70 space-pb--r70">
       <Container>
         <Row className="align-items-center">
-          <Col md={6}>
+          {pageTitle ? <Col md={6}>
             <div className="page-title">
               <h1 className="breadcrumb-title">{pageTitle}</h1>
             </div>
-          </Col>
+          </Col> : null}
           <Col md={6}>{children}</Col>
         </Row>
       </Container>
