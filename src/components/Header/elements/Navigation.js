@@ -258,7 +258,7 @@ const Navigation = ({ positionClass }) => {
                   <Link href="/shop/list-no-sidebar">Freightliner</Link>
                 </li>
                 <li>
-                  <Link href="/shop/list-no-sidebar">View All </Link>
+                  <Link href="/shop/all-models">View All </Link>
                 </li>
               </ul>
             </li>

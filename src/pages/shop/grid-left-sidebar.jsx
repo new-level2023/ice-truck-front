@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
 import { useSelector } from "react-redux";
 import { Container, Row, Col } from "react-bootstrap";
 import Paginator from "react-hooks-paginator";
 import { LayoutOne } from "../../layouts";
-import { BreadcrumbOne } from "../../components/Breadcrumb";
+import { Breadcrumb } from "components/Breadcrumb";
 import { Sidebar, ShopHeader, ShopProducts } from "../../components/Shop";
 import { getSortedProducts } from "../../lib/product";
 
@@ -52,16 +51,10 @@ const GridLeftSidebar = () => {
   return (
     <LayoutOne>
       {/* breadcrumb */}
-      <BreadcrumbOne pageTitle="Shop">
-        <ol className="breadcrumb justify-content-md-end">
-          <li className="breadcrumb-item">
-            <Link href="/">
-              Home
-            </Link>
-          </li>
-          <li className="breadcrumb-item active">Shop</li>
-        </ol>
-      </BreadcrumbOne>
+      <Breadcrumb pageTitle="Shop" crumbs={[
+        { href:"/", text: "Home" },
+        { text: "Shop" },
+      ]} />
       <div className="shop-content space-pt--r100 space-pb--r100">
         <Container>
           <Row>
