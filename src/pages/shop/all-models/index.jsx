@@ -9,6 +9,9 @@ import { Sidebar, ShopHeader, ShopProducts } from "components/Shop";
 import { getSortedProducts } from "lib/product";
 import { Disclaimer } from 'components/Disclaimer';
 import { ItemsGridListNav } from 'components/ItemsGridListNav';
+import { SearchInput } from 'components/SearchInput'
+import { useRouter } from 'next/router';
+import { FiltersSidebar } from 'components/Sidebars';
 
 const items = [{
     text: "Chevrolet/GM",
@@ -101,6 +104,9 @@ const AllBrands = () => {
     const [currentData, setCurrentData] = useState([]);
     const [sortedProducts, setSortedProducts] = useState([]);
     const [shopTopFilterStatus, setShopTopFilterStatus] = useState(false);
+    const router = useRouter();
+    const [models, setModels] = useState(items);
+    const { search } = router.query;
 
     const pageLimit = 12;
 
@@ -130,6 +136,10 @@ const AllBrands = () => {
         setCurrentData(sortedProducts.slice(offset, offset + pageLimit));
     }, [offset, products, sortType, sortValue, filterSortType, filterSortValue]);
 
+    useEffect(() => {
+        setModels(items.filter(i => search ? i.text.includes(search) : true))
+    }, [search, items]);
+
     return (
         <LayoutOne>
             <div className="shop-content space-pt--r100 space-pb--r100">
@@ -148,7 +158,9 @@ const AllBrands = () => {
                                 Please verify OEM reference numbers or fit before ordering. IceTruck is not responsible for incorrect identification.
                             </Disclaimer>
 
-                            <ItemsGridListNav items={items} />
+                            <SearchInput />
+
+                            <ItemsGridListNav items={models} />
 
                             {/* <ShopHeader
                                 getLayout={getLayout}
@@ -176,6 +188,7 @@ const AllBrands = () => {
                             </div> */}
                         </Col>
                         <Col lg={3} className="order-lg-first mt-4 pt-2 mt-lg-0 pt-lg-0">
+                            <FiltersSidebar products={models} />
                             {/* sidebar */}
                             {/* <Sidebar products={products} getSortParams={getSortParams} /> */}
                         </Col>

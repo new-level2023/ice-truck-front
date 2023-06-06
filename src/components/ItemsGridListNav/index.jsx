@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 /**
  * 
- * @param object items [{text:"", href:""}] 
+ * @param object items [{text:"", href:"", img:""}] 
  * @returns 
  */
 const ItemsGridListNav = ({ items = [] }) => {
@@ -11,7 +11,7 @@ const ItemsGridListNav = ({ items = [] }) => {
         <ul className="items-grid-list-nav">
             {items.length ? items.map((item) => <li key={`li-${item.text}`}>
                 <Link href={item.href}>
-                    <Image src={item.img} width={250} height={250} />
+                    <Image src={item.img} width={250} height={250} alt={item.text}/>
                     <span>{item.text}</span>
                 </Link>
             </li>
