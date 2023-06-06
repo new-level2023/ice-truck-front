@@ -8,6 +8,86 @@ import { Breadcrumb } from "components/Breadcrumb";
 import { Sidebar, ShopHeader, ShopProducts } from "components/Shop";
 import { getSortedProducts } from "lib/product";
 import { Disclaimer } from 'components/Disclaimer';
+import { ItemsGridListNav } from 'components/ItemsGridListNav';
+
+const items = [{
+    text: "Chevrolet/GM",
+    img: "/assets/images/models/Model_Sprinter.webp",
+    href: {
+        pathname: '/shop/[slug]',
+        query: { slug: "Chevrolet-GM" }
+    }
+}, {
+    text: "Ford",
+    img: "/assets/images/models/Model_Sprinter.webp",
+    href: {
+        pathname: '/shop/[slug]',
+        query: { slug: "Ford" }
+    }
+}, {
+    text: "Freightliner",
+    img: "/assets/images/models/Model_Sprinter.webp",
+    href: {
+        pathname: '/shop/[slug]',
+        query: { slug: "Freightliner" }
+    }
+}, {
+    text: "Hino",
+    img: "/assets/images/models/Model_Sprinter.webp",
+    href: {
+        pathname: '/shop/[slug]',
+        query: { slug: "Hino" }
+    }
+}, {
+    text: "International",
+    img: "/assets/images/models/Model_Sprinter.webp",
+    href: {
+        pathname: '/shop/[slug]',
+        query: { slug: "International" }
+    }
+}, {
+    text: "Kenworth",
+    img: "/assets/images/models/Model_Sprinter.webp",
+    href: {
+        pathname: '/shop/[slug]',
+        query: { slug: "Kenworth" }
+    }
+}, {
+    text: "Mack",
+    img: "/assets/images/models/Model_Sprinter.webp",
+    href: {
+        pathname: '/shop/[slug]',
+        query: { slug: "Mack" }
+    }
+}, {
+    text: "Peterbilt",
+    img: "/assets/images/models/Model_Sprinter.webp",
+    href: {
+        pathname: '/shop/[slug]',
+        query: { slug: "Peterbilt" }
+    }
+}, {
+    text: "Sprinter",
+    img: "/assets/images/models/Model_Sprinter.webp",
+    href: {
+        pathname: '/shop/[slug]',
+        query: { slug: "Sprinter" }
+    }
+}, {
+    text: "Volvo/White",
+    img: "/assets/images/models/Model_Sprinter.webp",
+    href: {
+        pathname: '/shop/[slug]',
+        query: { slug: "Volvo-White" }
+    }
+}, {
+    text: "Western Star",
+    img: "/assets/images/models/Model_Sprinter.webp",
+    href: {
+        pathname: '/shop/[slug]',
+        query: { slug: "Western-Star" }
+    }
+}]
 
 const AllBrands = () => {
     const { products } = useSelector((state) => state.product);
@@ -52,7 +132,6 @@ const AllBrands = () => {
 
     return (
         <LayoutOne>
-            {/* breadcrumb */}
             <div className="shop-content space-pt--r100 space-pb--r100">
                 <Container>
                     <Row>
@@ -62,24 +141,27 @@ const AllBrands = () => {
                             <Breadcrumb crumbs={[
                                 { href: "/", text: "Home" },
                                 { text: "Browse by Make/Model" },
-                            ]} />
+                            ]}
+                                classNameContainer="shop-breadcrumb" />
                             <Disclaimer>
                                 Browse by Make/Model is designed to be used as a guide and there could be multiple options used across different applications/years.
                                 Please verify OEM reference numbers or fit before ordering. IceTruck is not responsible for incorrect identification.
                             </Disclaimer>
 
-                            <ShopHeader
+                            <ItemsGridListNav items={items} />
+
+                            {/* <ShopHeader
                                 getLayout={getLayout}
                                 getFilterSortParams={getFilterSortParams}
                                 shopTopFilterStatus={shopTopFilterStatus}
                                 setShopTopFilterStatus={setShopTopFilterStatus}
                                 layout={layout}
-                            />
+                            /> */}
                             {/* shop products */}
-                            <ShopProducts layout={layout} products={currentData} />
+                            {/* <ShopProducts layout={layout} products={currentData} /> */}
 
                             {/* shop product pagination */}
-                            <div className="pagination pagination-style pagination-style--two justify-content-center">
+                            {/* <div className="pagination pagination-style pagination-style--two justify-content-center">
                                 <Paginator
                                     totalRecords={sortedProducts.length}
                                     pageLimit={pageLimit}
@@ -91,7 +173,7 @@ const AllBrands = () => {
                                     pagePrevText="«"
                                     pageNextText="»"
                                 />
-                            </div>
+                            </div> */}
                         </Col>
                         <Col lg={3} className="order-lg-first mt-4 pt-2 mt-lg-0 pt-lg-0">
                             {/* sidebar */}

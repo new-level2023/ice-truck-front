@@ -1,8 +1,8 @@
 import { Container, Row, Col } from "react-bootstrap";
 
-const BreadcrumbOne = ({ pageTitle, children }) => {
+const BreadcrumbOne = ({ pageTitle, children, classNameContainer = '' }) => {
   return (
-    <div className="breadcrumb-section bg--grey space-pt--r70 space-pb--r70">
+    <div className={`breadcrumb-section bg--grey space-pt--r70 space-pb--r70 ${classNameContainer}`}>
       <Container>
         <Row className="align-items-center">
           {pageTitle ? <Col md={6}>
