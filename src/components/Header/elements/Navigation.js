@@ -132,7 +132,9 @@ const Navigation = ({ positionClass }) => {
           </Link>
           <ul className="sub-menu sub-menu--mega">
             <li className="sub-menu--mega__column">
-              <h3 className="sub-menu--mega__title">View All Brands</h3>
+              <Link href="/shop/all-brands">
+                <h3 className="sub-menu--mega__title">View All Brands</h3>
+              </Link>
               <ul className="sub-menu--mega__list">
                 <li>
                   <Link href="/shop/grid-left-sidebar">Mahle</Link>
