@@ -9,6 +9,7 @@ enum StatusCode {
   TooManyRequests = 429,
   InternalServerError = 500,
 }
+
 class Http {
   private instance: AxiosInstance | null = null;
 

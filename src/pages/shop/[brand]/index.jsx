@@ -9,105 +9,50 @@ import { setBrands } from "store/slices/brands-slice";
 import { getBrands } from 'store/actions/brandsActions';
 import { LayoutBrowseItem } from 'layouts';
 
-
 const brandsExampleData = [{
-    text: "Chevrolet/GM",
-    category: ["Chevrolet/GM"],
-    tag: ["Chevrolet/GM"],
-    img: "/assets/images/models/Model_Sprinter.webp",
-    href: {
-        pathnameToAdd: '/[brand]',
-        queryToAdd: { brand: "Chevrolet-GM" }
-    }
-}, {
-    text: "Ford",
+    text: "Ford Model 1-1",
     category: ["Ford"],
     tag: ["Ford"],
     img: "/assets/images/models/Model_Sprinter.webp",
     href: {
-        pathnameToAdd: '/[brand]',
-        queryToAdd: { brand: "Ford" }
+        pathnameToAdd: '/[model]',
+        queryToAdd: { model: "Ford Model 1-1" }
     }
 }, {
-    text: "Freightliner",
-    category: ["Freightliner"],
-    tag: ["Freightliner"],
+    text: "Ford Model 1-2",
+    category: ["Ford"],
+    tag: ["Ford"],
     img: "/assets/images/models/Model_Sprinter.webp",
     href: {
-        pathnameToAdd: '/[brand]',
-        queryToAdd: { brand: "Freightliner" }
+        pathnameToAdd: '/[model]',
+        queryToAdd: { model: "Ford Model 1-2" }
     }
 }, {
-    text: "Hino",
-    category: ["Hino"],
-    tag: ["Hino"],
+    text: "Ford Model 1-3",
+    category: ["Ford"],
+    tag: ["Ford"],
     img: "/assets/images/models/Model_Sprinter.webp",
     href: {
-        pathnameToAdd: '/[brand]',
-        queryToAdd: { brand: "Hino" }
+        pathnameToAdd: '/[model]',
+        queryToAdd: { model: "Ford Model 1-3" }
     }
 }, {
-    text: "International",
-    category: ["International"],
-    tag: ["International"],
+    text: "Ford Model 1-4",
+    category: ["Ford"],
+    tag: ["Ford"],
     img: "/assets/images/models/Model_Sprinter.webp",
     href: {
-        pathnameToAdd: '/[brand]',
-        queryToAdd: { brand: "International" }
+        pathnameToAdd: '/[model]',
+        queryToAdd: { model: "Ford Model 1-4" }
     }
 }, {
-    text: "Kenworth",
-    category: ["Kenworth"],
-    tag: ["Kenworth"],
+    text: "Ford Model 1-5",
+    category: ["Ford"],
+    tag: ["Ford"],
     img: "/assets/images/models/Model_Sprinter.webp",
     href: {
-        pathnameToAdd: '/[brand]',
-        queryToAdd: { brand: "Kenworth" }
-    }
-}, {
-    text: "Mack",
-    category: ["Mack"],
-    tag: ["Mack"],
-    img: "/assets/images/models/Model_Sprinter.webp",
-    href: {
-        pathnameToAdd: '/[brand]',
-        queryToAdd: { brand: "Mack" }
-    }
-}, {
-    text: "Peterbilt",
-    category: ["Peterbilt"],
-    tag: ["Peterbilt"],
-    img: "/assets/images/models/Model_Sprinter.webp",
-    href: {
-        pathnameToAdd: '/[brand]',
-        queryToAdd: { brand: "Peterbilt" }
-    }
-}, {
-    text: "Sprinter",
-    category: ["Sprinter"],
-    tag: ["Sprinter"],
-    img: "/assets/images/models/Model_Sprinter.webp",
-    href: {
-        pathnameToAdd: '/[brand]',
-        queryToAdd: { brand: "Sprinter" }
-    }
-}, {
-    text: "Volvo/White",
-    category: ["Volvo/White"],
-    tag: ["Volvo/White"],
-    img: "/assets/images/models/Model_Sprinter.webp",
-    href: {
-        pathnameToAdd: '/[brand]',
-        queryToAdd: { brand: "Volvo-White" }
-    }
-}, {
-    text: "Western Star",
-    category: ["Western Star"],
-    tag: ["Western Star"],
-    img: "/assets/images/models/Model_Sprinter.webp",
-    href: {
-        pathnameToAdd: '/[brand]',
-        queryToAdd: { brand: "Western-Star" }
+        pathnameToAdd: '/[model]',
+        queryToAdd: { model: "Ford Model 1-5" }
     }
 }]
 
@@ -155,7 +100,7 @@ const AllBrands = () => {
         } else {
         }
         dispatch(setBrands(brandsExampleData));
-    }, [brands, brandsExampleData])
+    }, [brands])
 
     useEffect(() => {
         let sortedProducts = getSortedProducts(products, sortType, sortValue);
@@ -174,7 +119,7 @@ const AllBrands = () => {
     }, [search, brands]);
 
     return (
-        <LayoutBrowseItem browseBy="Brands" items={items} mainPathname="/shop" />
+        <LayoutBrowseItem browseBy="Models" items={items} />
     );
 };
 

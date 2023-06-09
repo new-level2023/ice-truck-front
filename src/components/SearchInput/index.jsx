@@ -19,9 +19,10 @@ function SearchInput() {
         const { search } = query;
         if (search !== value) {
             if (value) {
-                push({ query: { search: value } })
+                push({ query: { ...query, search: value } })
             } else if (search !== undefined) {
-                push({ query: {} })
+                delete query.search
+                push({ query })
             }
         }
     }, [query, value, push]);

@@ -6,9 +6,12 @@ import {
     setActiveSort
 } from "lib/product";
 
-const FiltersSidebar = ({ products }) => {
+const FiltersSidebar = ({ products, getSortParams }) => {
     const categories = getIndividualCategories(products);
     const tags = getIndividualTags(products);
+    console.log(getIndividualTags(products))
+    console.log({ tags })
+    console.log({ products })
 
     return (
         <div className="sidebar">
