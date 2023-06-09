@@ -8,6 +8,7 @@ import { ItemsGridListNav } from 'components/ItemsGridListNav';
 import { useRouter } from 'next/router';
 import { LayoutOne } from "layouts";
 import { getSortedProducts } from "lib/product";
+import SubCategory from "../components/SubCategory";
 
 const LayoutSearchFilter = ({ browseBy, items, mainPathname }) => {
     const router = useRouter();
@@ -92,7 +93,8 @@ const LayoutSearchFilter = ({ browseBy, items, mainPathname }) => {
 
                             <ItemsGridListNav items={items} mainPathname={mainPathname} />
                         </Col>
-                        <Col lg={3} className="order-lg-first mt-4 pt-2 mt-lg-0 pt-lg-0">
+                        <Col lg={3} className="order-lg-first mt-4 pt-2 mt-lg-0 pt-lg-0 bg-gray">
+                            <SubCategory subcategory={`Browse by ${browseBy}`} />
                             <FiltersSidebar products={items} getSortParams={getSortParams} />
                         </Col>
                     </Row>
