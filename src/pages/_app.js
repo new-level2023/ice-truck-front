@@ -32,6 +32,7 @@ const poppins = Poppins({
 
 const MyApp = ({ Component, ...rest }) => {
   const { store, props } = wrapper.useWrappedStore(rest);
+  
   useEffect(() => {
     store.dispatch(setProducts(products));
   }, []);

@@ -3,12 +3,14 @@ import { configureStore } from '@reduxjs/toolkit'
 import { createWrapper } from 'next-redux-wrapper'
 import storage from './sync_storage';
 import productReducer from './slices/product-slice';
+import brandsReducer from './slices/brands-slice';
 import cartReducer from './slices/cart-slice';
 import wishlistReducer from './slices/wishlist-slice';
 import compareReducer from './slices/compare-slice';
 
 const combinedReducer = combineReducers({
     product: productReducer,
+    brands: brandsReducer,
     cart: cartReducer,
     wishlist: wishlistReducer,
     compare: compareReducer

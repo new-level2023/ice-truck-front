@@ -1,0 +1,23 @@
+.search-input-container {
+    & label {
+        & span {
+            font-weight: 400;
+            padding-right: 10px;
+            font-size: 1.1em;
+        }
+        & input {
+            padding: 5px;
+            border: 1px solid #c4c4c4;
+            min-width: 300px;
+        }
+    }
+}
+
+.search-input-button {
+    margin-left: 10px;
+    padding: 5px 15px;
+    background: #c4c4c4;
+    border: 1px solid #c4c4c4;
+    border-radius: 10px;
+    color: white;
+}

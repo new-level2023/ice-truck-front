@@ -13,7 +13,9 @@
     "@next/font": "^13.0.7",
     "@reduxjs/toolkit": "^1.9.1",
     "animate.css": "^4.1.1",
+    "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
+    "classnames": "^2.3.2",
     "clsx": "^1.2.1",
     "next": "^13.0.7",
     "next-redux-wrapper": "^8.0.0",
@@ -33,6 +35,8 @@
     "yet-another-react-lightbox": "^2.2.3"
   },
   "devDependencies": {
-    "sass": "^1.26.9"
+    "@types/node": "20.2.5",
+    "sass": "^1.26.9",
+    "typescript": "5.1.3"
   }
 }

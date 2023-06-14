@@ -1,0 +1,18 @@
+.items-grid-list-nav{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    width: 100%;
+    & li a {
+        display: flex;
+        float: left;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.3 ease;
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}

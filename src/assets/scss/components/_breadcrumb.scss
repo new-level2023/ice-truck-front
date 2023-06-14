@@ -27,6 +27,7 @@
 
   background-color: transparent;
   .breadcrumb-item {
+    align-self: center;
     a {
       font-size: 14px;
       font-weight: 400;
@@ -57,3 +58,11 @@
 }
 /*=====  End of breadcrumb  ======*/
 
+.shop-breadcrumb{
+  padding: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  & .container{
+    padding: 0;
+  }
+}

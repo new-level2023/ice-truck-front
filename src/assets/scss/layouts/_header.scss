@@ -499,6 +499,12 @@
   }
 }
 
+.view-all-brands-link{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .navigation {
   flex-grow: 1;
   & > ul {
